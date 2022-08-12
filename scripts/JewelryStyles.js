@@ -1,4 +1,4 @@
-import { getStyles } from "./database.js"
+import { getStyles } from "./database.js" //needed to add export of getStyles from module database
 
 const styles = getStyles()
 
@@ -15,8 +15,8 @@ export const JewelryStyles = () => {
     const listItemsArray =
 
 
-    // Join all of the strings in the array into a single string
-    html += listItems.join("")
+        // Join all of the strings in the array into a single string
+        html += listItems.join("")
 
     html += "</ul>"
     return html
