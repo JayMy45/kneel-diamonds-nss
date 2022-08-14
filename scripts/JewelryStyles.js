@@ -1,10 +1,22 @@
-import { getStyles } from "./database.js" //needed to add export of getStyles from module database
+import { getStyles, setStyle } from "./database.js" //needed to add export of getStyles from module database
 
 const styles = getStyles()
 
 document.addEventListener(
     "change",
     (event) => {
+        if (event.target.name === "styles") {
+            setStyle(parseInt(event.target.value));
+        }
+    }
+)
+
+document.addEventListener(
+    "change",
+    (event) => {
+        if (event.target.name === "styles") {
+            window.alert(`User chose style #${event.target.value}`)
+        }
     }
 )
 

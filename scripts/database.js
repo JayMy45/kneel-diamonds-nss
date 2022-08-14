@@ -6,6 +6,16 @@
 
 */
 const database = {
+
+    //this Object key stores changes to the state of the application as dictated by the users.
+    /*Why store in object...?
+    1. the key is accessible to users via dotMethod
+    2.   strings/numbers aren't iterable
+    3. I'm not sure why it cant be stored in a array.
+    */
+
+    orderBuilder: [{}],
+
     styles: [
         { id: 1, style: "Classic", price: 500 },
         { id: 2, style: "Modern", price: 710 },
@@ -32,6 +42,8 @@ const database = {
             sizeId: 2,
             styleId: 3,
             timestamp: 1614659931693
+
+
         }
     ]
 }
@@ -49,4 +61,19 @@ export const getStyles = () => {
 }
 export const getOrders = () => {
     return database.orders.map(order => ({ ...order }))
+}
+
+
+//export functions whose responsibility is to set state...
+export const setMetal = (id) => {  //parameter to be import "id" from to function...
+    database.orderBuilder.metalId = id
+}  /* the setMetal function adds a new key "metalId" equal to id using dot.method to 
+    add to the orderBuilder key in the database ObjectArray */
+
+export const setSize = (id) => {
+    database.orderBuilder.sizeId = id
+}
+
+export const setStyle = (id) => {
+    database.orderBuilder.styleId = id
 }
