@@ -11,14 +11,14 @@ document.addEventListener(
     }
 )
 
-document.addEventListener(
-    "change",
-    (event) => {
-        if (event.target.name === "styles") {
-            window.alert(`User chose style #${event.target.value}`)
-        }
-    }
-)
+// document.addEventListener(
+//     "change",
+//     (event) => {
+//         if (event.target.name === "styles") {
+//             window.alert(`User chose style #${event.target.value}`)
+//         }
+//     }
+// )
 
 export const JewelryStyles = () => {
     let html = "<ul>"

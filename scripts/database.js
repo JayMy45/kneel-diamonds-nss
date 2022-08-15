@@ -60,7 +60,7 @@ export const getStyles = () => {
     return database.styles.map(style => ({ ...style }))
 }
 export const getOrders = () => {
-    return database.orders.map(order => ({ ...order }))
+    return database.customOrders.map(order => ({ ...order }))
 }
 
 
@@ -76,4 +76,31 @@ export const setSize = (id) => {
 
 export const setStyle = (id) => {
     database.orderBuilder.styleId = id
+}
+
+export const addCustomOrder = () => { //this function will access the DOM and 
+
+    //copy the current state of user choices...
+    const newOrder = { ...database.orderBuilder } //declare a variable that is equal to a copy of orderBuilder object inputs at the time the addCustomOrder function is called
+
+    //Add new primary key to the object (creating new id)
+    const lastIndex = database.customOrders.length - 1  //not sure why the length of the customerOrders is needed to subtract 1 from then use below?
+
+    newOrder.id = database.customOrders[lastIndex].id + 1  //creates a id for the orderBuilder object which up to this point only contains metalId/styleId/sizeId 
+    //add an id key to the new orderBuilder object that has been provided
+
+    //add time stamp to the order
+    newOrder.timestamp = Date.now()
+
+    // Add the new order object to custom orders state
+    database.customOrders.push(newOrder)
+
+    // Reset the temporary state for user choices
+    database.orderBuilder = {}
+
+    // Broadcast a notification that permanent state has changed
+    document.dispatchEvent(new CustomEvent("stateChanged"))  //don't understand nomenclature (new CustomEvent?)
+
+    //do I need to import this function to the main in order for it to work properly?
+
 }
