@@ -1,4 +1,5 @@
 import { getMetals, setMetal } from "./database.js"
+import { Orders } from "./Orders.js"
 
 document.addEventListener( //event listener access the DOM
     "change", //the type of event listener is to change...as seen below!
