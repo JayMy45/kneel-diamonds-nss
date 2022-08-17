@@ -79,7 +79,7 @@ export const setStyle = (id) => {
 }
 
 export const addCustomOrder = () => { //this function will access the DOM and create a new order using the inputs from user.
-    //should be invoked whenever the user makes order via click  (in the click eventListner on KneelDiamonds.js/html handler)
+    //should be invoked whenever the user makes order via click  (in the click eventListener on KneelDiamonds.js/html handler)
 
     //copy the current state of user choices...
     const newOrder = { ...database.orderBuilder } //declare a variable that is equal to a copy of orderBuilder object inputs at the time the addCustomOrder function is called
