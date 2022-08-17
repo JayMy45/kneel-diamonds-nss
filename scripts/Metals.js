@@ -1,12 +1,11 @@
 import { getMetals, setMetal } from "./database.js"
-import { Orders } from "./Orders.js"
 
 document.addEventListener( //event listener access the DOM
     "change", //the type of event listener is to change...as seen below!
     (event) => {  //need to know more about this damned parameter here.
         if (event.target.name === "metal") { //if the event target name is equal to metal
             setMetal(parseInt(event.target.value)) //then the event target.value (id/metalId/etc.) will be provided as an integer (when was it ever another datatype ('string')?) 
-        }
+        }                   //This is the parameter being passed through the setMetal function as id.
     }
 )
 
