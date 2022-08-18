@@ -14,8 +14,6 @@ const database = {
     3. I'm not sure why it cant be stored in a array.
     */
 
-    orderBuilder: [{}],
-
     styles: [
         { id: 1, style: "Classic", price: 500 },
         { id: 2, style: "Modern", price: 710 },
@@ -45,7 +43,9 @@ const database = {
 
 
         }
-    ]
+    ],
+
+    orderBuilder: [{}]
 }
 
 export const getMetals = () => {

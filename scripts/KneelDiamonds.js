@@ -8,8 +8,9 @@ import { addCustomOrder } from "./database.js"
 document.addEventListener(
     "click",
     (event) => {
-        if (event.target.id.startsWith("orderButton")) //add click event to target button at the id specified
+        if (event.target.id.startsWith("orderButton")) {//add click event to target button at the id specified
             addCustomOrder() //call function to print permanent changes to page.
+        }
     }
 )
 
