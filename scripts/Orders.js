@@ -38,7 +38,7 @@ const buildOrderListItem = (order) => {
 
     return `<li>
         Order #${order.id} was placed on ${costString}
-    </li>`                                //{costString} updated the callback to record/print price result...
+    </li>` //{costString} updated the callback to record/print price result...
 }
 
 export const Orders = () => {
